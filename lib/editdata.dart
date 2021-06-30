@@ -20,7 +20,7 @@ class _EditState extends State<Edit> {
   TextEditingController agama;
 
   void editData() {
-    var url = "hhttp://192.168.18.45/app_uas/_api/edit.php";
+    var url = "http://192.168.56.1/uas_mobile_application/_api/edit.php";
     http.post(url, body: {
       'id': widget.list[widget.index]['id'],
       'nama': nama.text,
@@ -43,7 +43,7 @@ class _EditState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Edit Data ${widget.list[widget.index]['name']}"),
+        title: Text("Edit Data ${widget.list[widget.index]['nama']}"),
       ),
       body: ListView(
         children: [

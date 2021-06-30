@@ -26,7 +26,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   Future<List> getData() async{
-    final responce = await http.get("http://192.168.18.45/app_uas/_api/getdata.php");
+    final responce = await http.get("http:192.168.56.1/uas_mobile_application/_api/getdata.php");
     return jsonDecode(responce.body);
   }
 

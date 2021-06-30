@@ -11,16 +11,16 @@ class NewData extends StatefulWidget {
 
 class _NewDataState extends State<NewData> {
   TextEditingController nama = new TextEditingController();
-  TextEditingController spesialis = new TextEditingController();
   TextEditingController alamat = new TextEditingController();
-  TextEditingController notelp = new TextEditingController();
+  TextEditingController no_hp = new TextEditingController();
+  TextEditingController agama = new TextEditingController();
   void addData() {
-    var url = "http://192.168.18.45/app_uas/_api/add.php";
+    var url = "http://192.168.56.1/uas_mobile_application/_api/add.php";
     http.post(url, body: {
       "nama": nama.text,
-      "spesialis": spesialis.text,
       "alamat": alamat.text,
-      "no_telp": notelp.text,
+      "no_hp": no_hp.text,
+      "agama": agama.text,
     });
   }
 
@@ -28,29 +28,29 @@ class _NewDataState extends State<NewData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add New Data"),
+        title: Text("Tambah Data"),
       ),
       body: ListView(
         children: [
           TextField(
             controller: nama,
             decoration: InputDecoration(
-                hintText: "Enter Nama", labelText: "Enter Nama"),
-          ),
-          TextField(
-            controller: spesialis,
-            decoration: InputDecoration(
-                hintText: "Enter Spesialis", labelText: "Enter Spesialis"),
+                hintText: "Masukkan nama", labelText: "Ketik nama"),
           ),
           TextField(
             controller: alamat,
             decoration: InputDecoration(
-                hintText: "Enter Alamat", labelText: "Enter Alamat"),
+                hintText: "Masukkan alamat", labelText: "Ketik alamat"),
           ),
           TextField(
-            controller: notelp,
+            controller: no_hp,
             decoration: InputDecoration(
-                hintText: "Enter No. Telp", labelText: "Enter No. Telp"),
+                hintText: "Masukkan no_hp", labelText: "Ketik no_hp"),
+          ),
+          TextField(
+            controller: agama,
+            decoration: InputDecoration(
+                hintText: "Masukkan agama", labelText: "Ketik agama"),
           ),
           MaterialButton(
             child: Text("Add Data"),
